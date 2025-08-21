@@ -1,0 +1,168 @@
+
+.flex_destination {
+  display: flex;
+  gap: var(--gap, 1rem); /* custom property is the first parameter */
+  justify-content: center;
+
+}
+
+
+@media (max-width: 35rem) {
+  .flex_destination {
+    flex-direction: column;
+    align-items: center;
+}
+}
+
+.destination_stats {
+  flex-grow: 1; 
+  text-align: left;
+}
+
+@media (max-width: 35rem) {
+  .destination_stats {
+  text-align: center;
+}
+}
+
+.container_number_indicators {
+    padding-inline: 5em;
+    max-width: 80rem;
+    margin-bottom: 9rem;
+    text-align: center;
+    margin-block: 1em;
+}
+
+@media (min-width: 35rem) {
+.container_number_indicators {
+    text-align: unset;
+    padding-inline: 2em;
+}
+}
+
+@media (min-width: 45rem) {
+.container_number_indicators {
+    text-align: unset;
+    padding-inline: 8em;
+}
+}
+
+.title_line::after {
+    content: '';
+    display:block;
+    position: relative;
+    height: 1px;
+    background: hsl(var(--color-white) / .25);
+    margin-block: 2em;
+    width: 100%;
+   order: 1;
+   z-index: 1;
+  }
+
+.grid_container_destination {
+   --flow-space: 2rem;
+   grid-template-areas: 
+  'title'
+  'image'
+  'tabs'
+  'content';
+}
+
+.numbered_titles {
+  grid-area: title;
+}
+
+.grid_container_destination > img {
+  grid-area: image;
+  max-width: 60%;
+  margin-top: 8rem;
+}
+
+.grid_container_destination > .tab_list {
+  grid-area: tabs;
+  margin-top: 8rem;
+}
+
+.grid_container_destination > .destination_info {
+  grid-area: content;
+}
+
+.destination_meta {
+  flex-direction: column;
+  border-top: 1px solid hsl(var(--color-white) / .1);
+  padding-top:2.5rem;
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 35em){
+  .numbered_titles {
+    justify-self: start;
+    margin-top: 2rem;
+  }
+
+  .destination_meta {
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+}
+
+@media (min-width: 45rem) {
+    .grid_container_destination {
+      justify-items: start;
+      align-items: start;
+        grid-template-areas: 
+            '. title title .'
+            '. image tabs .'
+            '. image content .';            
+        grid-template-columns: minmax(8rem, 1fr) repeat(2, minmax(0, 45rem)) minmax(1rem, 1fr);
+
+    }
+
+    .grid_container_destination > img {
+      max-width: 80%;
+    }
+
+    .destination_meta {
+  --gap: min(5vw, 6rem);
+  justify-content: start;
+}
+}
+
+/* background image */
+.destination {
+  background-image:url('assets/destination/background-destination-mobile.jpg');
+}
+
+@media (min-width: 35rem) {
+  .destination {
+    background-position: center center;
+    background-image: url('assets/destination/background-destination-tablet.jpg');
+  }
+}
+
+@media (min-width: 45rem) {
+  .destination {
+    background-image: url('assets/destination/background-destination-desktop.jpg');
+  }
+  nav {
+        order: 2;
+    }
+}
+
+.hidden {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+  }
+
+.moon_button,
+.mars_button {
+  cursor:pointer;
+}
+
+
+@media (max-width: 35rem) {
+p#content {
+  width: 80%; 
+  margin: auto;
+}
+}

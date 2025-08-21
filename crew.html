@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bellefair&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="utilities.css" /> 
+<link rel="stylesheet" href="components.css" />  
+<link rel="stylesheet" href="main.css" />
+<link rel="stylesheet" href="crew.css" />
+  
+  <title>Frontend Mentor | Space tourism website</title>
+</head>
+<body class="crew">
+  <a class="skip_to_content" href="#main">Skip To Content</a>
+	<header class="primary_header flex">
+		<div>
+			<img src="assets/shared/logo.svg" alt="space tourism logo" class="logo" />
+		</div>
+		<!-- aria-controls, controls an element using its ID -->
+		<button class="mobile_nav_toggle" aria-controls="primary_navigation">
+			<span class="sr-only" aria-expanded="false">Menu</span>
+		</button>
+			
+			<nav>
+				<ul id="primary_navigation" class="primary_navigation flex underline_indicators ff-barlow-cond">
+          <li aria-selected="false"><a class="text-white uppercase letter-spacing-2" href="index.html"><span aria-hidden="true">00</span> Home</a></li>
+          <li aria-selected="false"><a class="text-white uppercase letter-spacing-2" href="destination.html"><span aria-hidden="true">01</span> Destination</a></li>
+          <li aria-selected="true" class="active"><a class="text-white uppercase letter-spacing-2" href="crew.html"><span aria-hidden="true">02</span> Crew</a></li>
+          <li aria-selected="false"><a class="text-white uppercase letter-spacing-2" href="technology.html"><span aria-hidden="true">03</span> Technology</a></li>
+        </ul>
+			</nav>
+			
+	</header>
+
+  <main id="main" class="grid_container grid_container_crew flow">
+    <h1 class="numbered_titles"><span>02</span> Meet your crew</h1>
+    
+    <div class="flex dot_indicators" role="tabList" aria-label="crew member list">
+        <button aria-selected="true" aria-controls="commander_tab" data-image="douglas-hurley" data-article="commander_tab"
+        role="tab"><span class="sr-only">Slider title</span></button>
+        <button aria-selected="false" aria-controls="engineer_tab" data-image="anousheh-ansari" data-article="engineer_tab"
+        role="tab"><span class="sr-only">Slider title</span></button>
+        <button aria-selected="false" aria-controls="pilot_tab"  data-image="victor-glover" data-article="pilot_tab"
+        role="tab"><span class="sr-only">Slider title</span></button>
+        <button aria-selected="false" aria-controls="specialist_tab" data-image="mark-shuttleworth" data-article="specialist_tab"
+        role="tab"><span class="sr-only">Slider title</span></button>
+    </div>
+
+    <article class="crew_details flow" id="commander_tab" role="tabpanel">
+      <header class="flow flow_space_small ff-bellefair">
+        <h3 class="uppercase font_size_32">Commander</h3>
+        <h1 class="uppercase font_size_56 ">Douglas Hurley</h1>
+      </header>
+      <p class="text-accent font_weight_200 line_height">
+        Douglas Gerald Hurley is an American engineer, former Marine Corps pilot 
+  and former NASA astronaut. He launched into space for the third time as 
+  commander of Crew Dragon Demo-2.
+      </p>
+      
+    </article>
+
+    <article class="crew_details flow hidden" id="engineer_tab" role="tabpanel">
+      <header class="flow flow_space_small">
+        <h3 class="uppercase">Flight Engineer</h3>
+        <h1 class="uppercase font_size_32">Anousheh Ansari</h1>
+      </header>
+      <p class="text-accent font_weight_200 line_height">
+        Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. 
+  Ansari was the fourth self-funded space tourist, the first self-funded woman to 
+  fly to the ISS, and the first Iranian in space.
+      </p>
+      
+    </article>
+
+    <article class="crew_details flow hidden" id="pilot_tab" role="tabpanel">
+      <header class="flow flow_space_small">
+        <h3 class="uppercase">Pilot</h3>
+        <h1 class="uppercase font_size_32">Victor Glover</h1>
+      </header>
+      <p class="text-accent font_weight_200 line_height">
+        Pilot on the first operational flight of the SpaceX Crew Dragon to the 
+  International Space Station. Glover is a commander in the U.S. Navy where 
+  he pilots an F/A-18.He was a crew member of Expedition 64, and served as a 
+  station systems flight engineer. 
+      </p>
+      
+    </article>
+
+    <article class="crew_details flow hidden" id="specialist_tab" role="tabpanel">
+      <header class="flow flow_space_small">
+        <h3 class="uppercase">Mission Specialist</h3>
+        <h1 class="uppercase font_size_32">Mark Shuttleworth</h1>
+      </header>
+      <p class="text-accent font_weight_200 line_height">
+        Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind 
+  the Linux-based Ubuntu operating system. Shuttleworth became the first South 
+  African to travel to space as a space tourist.
+      </p>
+      
+    </article>
+
+    <img id="douglas-hurley" src="assets/crew/image-douglas-hurley.png" alt="douglas hurley"  />
+    <img id="anousheh-ansari" class=" hidden" src="assets/crew/image-anousheh-ansari.png" alt="anousheh ansari"  />
+    <img id="victor-glover" class=" hidden" src="assets/crew/image-victor-glover.png" alt="victor glover"  />
+    <img id="mark-shuttleworth" class=" hidden" src="assets/crew/image-mark-shuttleworth.png" alt="mark shuttleworth"  />
+  </main>
+  
+</body>
+<script src="index.js" defer></script>
+<script src="tabs.js" defer></script>
+</html>

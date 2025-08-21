@@ -1,0 +1,310 @@
+.action_button {
+  position: relative;
+  z-index: 1;
+  border-radius: 50%;
+  text-align: center;
+  display: grid;
+   place-items: center;
+  text-decoration: none;
+  padding: 1.5em 2em;
+  aspect-ratio:1;
+  font-size: var(--font-size-18);
+}
+
+@media (min-width: 45rem) {
+.action_button {
+  font-size: var(--font-size-32);
+}
+}
+
+.action_button_mobile {
+  position: relative;
+  z-index: 1;
+  border-radius: 50%;
+  text-align: center;
+  display: grid;
+   place-items: center;
+  text-decoration: none;
+  padding: 2.5em 2.5em;
+  aspect-ratio:1;
+}
+/* psuedo animation setup */
+.action_button::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: hsl(var(--color-white) / .15);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 500ms linear, transform 750ms ease-in-out;
+}
+
+.action_button_mobile::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: hsl(var(--color-white) / .15);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 500ms linear, transform 750ms ease-in-out;
+}
+
+/* actions for the animation */
+.action_button:hover::after,
+.action_button:focus::after {
+    opacity: 1;
+    transform: scale(1.5);
+}
+
+.action_button_mobile:hover::after,
+.action_button_mobile:focus::after {
+    opacity: 1;
+    transform: scale(1.5);
+}
+
+.primary_navigation {  
+ 
+  --gap: clamp(1.5rem, 5vw, 9rem);;
+  --underline-gap: 2rem;
+    list-style: none;
+    z-index: 1000;
+    padding: 0;
+    margin: 0;
+    /* gloss morphism (glossy look), not in firefox */
+    background: hsl(var(--color-white) / .05);
+backdrop-filter: blur(1.5rem);
+  }
+
+  @supports (backdrop-filter: blur(1rem)) {
+    .primary-navigation {
+        background: hsl( var(--clr-white) / 0..05);
+        backdrop-filter: blur(1.5rem);
+    }
+  }
+
+  .mobile_nav_toggle {
+  display: none;
+}
+
+  /* mobile */
+@media (max-width: 35rem) {  
+  .primary_navigation {   
+  --underline-gap: .5rem;
+    display:flex;
+    flex-direction: column;
+    position: fixed;
+    list-style: none;
+    z-index: 1000;
+    padding: min(20rem, 15vh) 2rem;
+    transform: translateX(100%); /* hide all the way to the right on nav button */
+    inset: 0 0 0 20%;
+    transition: transform 500ms ease-in-out;
+  } 
+ 
+  .primary_navigation[data-visible="true"] {
+    transform: translateX(0);
+  }
+
+  .primary_navigation.underline_indicators > .active {
+    border:0;
+  }
+
+  .mobile_nav_toggle {
+  display: block;
+  position: absolute;
+  z-index: 2000;
+  right: 1.5rem;
+  top: 2rem;
+  background: transparent;
+  border: 0;
+  background-image: url(./assets/shared/icon-hamburger.svg);
+  background-repeat: no-repeat;
+  background-position:  center;
+  width: 1.5rem;
+  aspect-ratio: 1;
+}
+
+.mobile_nav_toggle[aria-expanded="true"]{
+  background-image: url(./assets/shared/icon-close.svg);
+}
+
+.mobile-nav-toggle:focus-visible {
+        outline: 5px solid white;
+        outline-offset: 5px;
+    }
+}
+
+
+
+.primary_navigation_mobile {
+  --gap: 6rem;
+  --underline-gap: 0.5rem;
+}
+
+.primary_navigation a{
+    text-decoration: none;
+    margin: 0;    
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .primary_navigation a > span {
+  font-weight: 700;
+  margin-right: .5em;
+}
+
+
+
+.primary_navigation_mobile a{
+    text-decoration: none;
+    margin: 0;    
+    padding: 0;
+  }
+
+  .primary_navigation_mobile a > span {
+  font-weight: 700;
+  margin-right: .5em;
+}
+
+@media (min-width: 35em) {
+  .primary_navigation {
+    padding-inline: clamp(3rem, 9vw, 7rem);
+  }
+}
+
+@media (min-width: 35em) {
+.primary_navigation > li > a > span {
+  display: none;
+}
+}
+    
+@media (min-width: 45rem) {
+  .primary_header::before {
+    content: '';
+    display:block;
+    position: relative;
+    height: 1px;
+    background: hsl(var(--color-white) / .25);
+    width: 52%;
+    order: 1;
+    margin-right: -2.5rem;
+   z-index: 1;
+  }
+
+  .primary_navigation {
+    /* margin block is the same as margin-top and margin-bottom together */
+    margin-block: 2rem;
+  }
+  .grid_container {
+    text-align: left;
+    column-gap: 2em;
+    grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(1rem, 1fr);
+    position: relative;
+  } 
+
+  .grid_container > *:first-child {
+  grid-column: 2;
+}
+
+.grid_container > *:last-child {
+  grid-column: 3;
+}
+
+.grid_container-home {
+  padding-bottom: 6rem;
+  align-items: end; /* moves items to the bottom of the grid */
+}
+}
+
+.underline_indicators > * {
+	border-bottom: .2rem solid hsl( var(--color-white) / 0);
+  border: 0;
+  padding: var(--underline-gap, .5rem) 0;
+  background: transparent;
+}
+
+.underline_indicators_mobile > * {
+	border-right: .2rem solid hsl( var(--color-white) / 0);
+  border: 0;
+  cursor: pointer;
+  padding: var(--underline-gap, 1em) 0;
+}
+
+.underline_indicators > :hover,
+.underline_indicators > :focus  {
+	border-bottom: 3px solid hsl( var(--color-white) / .25);
+}
+
+.underline_indicators > :active,
+.underline_indicators > [aria-selected="true"]  {
+	border-bottom: 3px solid hsl( var(--color-white) / 1);
+}
+
+.underline_indicators_mobile > :hover,
+.underline_indicators_mobile > :focus  {
+	border-right: 3px solid hsl( var(--color-white) / .25);
+}
+
+.underline_indicators_mobile > :active,
+.underline_indicators_mobile > [aria-selected="true"]  {
+	border-right: 3px solid hsl( var(--color-white) / 1);
+}
+
+.tab_list {
+  --gap: 2rem;
+}
+
+.dot_indicators > * {
+  cursor: pointer;
+  border: 0;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  padding: .5em;
+  background-color: hsl( var(--color-white) / .25);
+}
+
+.dot_indicators_mobile > * {
+  padding: .3em;
+}
+
+.dot_indicators > *:hover,
+.dot_indicators > *:focus {
+  background-color: hsl( var(--color-white) / .50);
+}
+
+.dot_indicators > [aria-selected="true"]  {
+	background-color: hsl( var(--color-white) / 1);
+}
+
+
+.number_indicators > * {
+  cursor: pointer;
+  border: 0;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  padding: .5em 1.2em;
+  background-color: hsl( var(--color-blue-900) / .25);
+  border: 1px solid hsl( var(--color-white) / .25);
+  color: hsl( var(--color-white));
+}
+
+.number_indicators_mobile > * {
+  padding: 0.2em 0.8em;
+}
+
+.number_indicators > *:hover,
+.number_indicators > *:focus {
+  border: 1px solid hsl( var(--color-white) / .50);
+}
+
+.number_indicators > [aria-selected="true"]  {
+	background-color: hsl( var(--color-white));
+  color: hsl( var(--color-blue-900));
+}
+
+
+

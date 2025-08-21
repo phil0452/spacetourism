@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bellefair&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="utilities.css" /> 
+<link rel="stylesheet" href="components.css" />  
+<link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="destination.css" />
+  <title>Frontend Mentor | Space tourism website</title>
+</head>
+<body class="destination">
+  <a class="skip_to_content" href="#main">Skip To Content</a>
+
+  <header class="primary_header flex">
+    <div>
+      <img src="assets/shared/logo.svg" alt="space tourism logo" class="logo" />
+    </div>
+    <!-- aria-controls, controls an element using its ID -->
+    <button class="mobile_nav_toggle" aria-controls="primary_navigation">
+      <span class="sr-only" aria-expanded="false">Menu</span>
+    </button>
+    
+    <nav>
+      <ul id="primary_navigation" class="primary_navigation flex underline_indicators ff-barlow-cond">
+        <li aria-selected="false"><a class="text-white uppercase letter-spacing-2" href="index.html"><span aria-hidden="true">00</span> Home</a></li>
+        <li aria-selected="true" class="active"><a class="text-white uppercase letter-spacing-2" href="destination.html"><span aria-hidden="true">01</span> Destination</a></li>
+        <li aria-selected="false"><a class="text-white uppercase letter-spacing-2" href="crew.html"><span aria-hidden="true">02</span> Crew</a></li>
+        <li aria-selected="false"><a class="text-white uppercase letter-spacing-2" href="technology.html"><span aria-hidden="true">03</span> Technology</a></li>
+      </ul>
+    </nav>
+    
+  </header>
+
+  <main id="main" class="grid_container grid_container_destination flow">
+    <h2 class="numbered_titles"><span>01</span> Pick You Destination</h2>
+
+    <img id="image-moon" src="assets/destination/image-moon.png" alt="moon"  >
+    <img class="hidden" id="image-mars" src="assets/destination/image-mars.png" alt="mars"  >
+    <img class="hidden" id="image-europa" src="assets/destination/image-europa.png" alt="europa"  >
+    <img class="hidden" id="image-titan" class="destination_image" src="assets/destination/image-titan.png" alt="titan"  >
+
+    <div class="tab_list flex underline_indicators ff-barlow-cond" role="tabList" aria-label="destination list">
+        <button aria-selected="true" id="moon_button" role="tab" aria-controls="moon_tab" tabindex="0" class="text-accent uppercase letter-spacing-2 moon_button destination_button"
+        data-image="image-moon" data-article="moon_tab">Moon</button>
+        <button aria-selected="false" id="mars_button" role="tab" aria-controls="mars_tab" tabindex="-1" class="text-accent uppercase letter-spacing-2 mars_button destination_button"
+        data-image="image-mars" data-article="mars_tab">Mars</button>
+        <button aria-selected="false" id="europa_button" role="tab" aria-controls="europa_tab" tabindex="-1" class="text-accent uppercase letter-spacing-2 europa_button destination_button"
+        data-image="image-europa" data-article="europa_tab">Europa</button>
+        <button aria-selected="false" id="titan_button" role="tab" aria-controls="titan_tab" tabindex="-1" class="text-accent uppercase letter-spacing-2 titan_button destination_butto"
+        data-image="image-titan" data-article="titan_tab">Titan</button>
+    </div>
+
+          
+    <article id="moon_tab" class="text-accent font_size_16 destination_info flow" tabindex="0" role="tabpanel">
+      <h1 class="uppercase ff-barlow-normal font_size_28 text-accent letter-spacing-1">
+        <span class="ff-bellefair font_size_100 text-white d-block uppercase">Moon</span>
+    </h1>
+
+        <p class="font_weight_200 line_height">See our planet as you’ve never seen it before. A perfect relaxing trip away to help 
+    regain perspective and come back refreshed. While you’re there, take in some history 
+    by visiting the Luna 2 and Apollo 11 landing sites.
+    </p>
+
+    <div class="flex destination_meta uppercase letter-spacing-2">
+      <div >
+        <p class="text-accent font_size_14 ff-barlow-cond font_weight_200">Avg. distance</p>
+        <p class="font_size_28 ff-bellefair  text-white">384,400 km</p>
+      </div>
+      <div >
+        <p class="text-accent font_size_14 ff-barlow-cond font_weight_200">Est. travel time</p>
+        <p class=" font_size_28 ff-bellefair  text-white">3 days</p>
+      </div>
+    </div>
+    </article>
+
+
+  <article  id="mars_tab" class="text-accent font_size_16 destination_info flow hidden" tabindex="1" role="tabpanel">
+    <h1 class="uppercase ff-barlow-normal font_size_28 text-accent letter-spacing-1">
+      <span class="ff-bellefair font_size_100 text-white d-block uppercase">Mars</span>
+    </h1>
+
+      <p class="font_weight_200 line_height">Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, 
+    the tallest planetary mountain in our solar system. It’s two and a half times 
+    the size of Everest!
+    </p>
+
+  <div class="flex destination_meta uppercase letter-spacing-2">
+    <div >
+      <p class="text-accent font_size_14 ff-barlow-cond font_weight_200">Avg. distance</p>
+      <p class=" letter-spacing-2 font_size_28 ff-bellefair  text-white">225 mil. km</p>
+    </div>
+    <div >
+      <p class="text-accent font_size_14 letter-spacing-2 ff-barlow-cond font_weight_200">Est. travel time</p>
+      <p class=" letter-spacing-2 font_size_28 ff-bellefair  text-white">9 months</p>
+    </div>
+  </div>
+  </article>
+
+  <article  id="europa_tab" class="text-accent font_size_16 destination_info flow hidden" tabindex="2" role="tabpanel">
+    <h1 class="uppercase ff-barlow-normal font_size_28 text-accent letter-spacing-1">
+      <span class="ff-bellefair font_size_100 text-white d-block uppercase">Europa</span>
+    </h1>
+
+      <p class="font_weight_200 line_height">The smallest of the four Galilean moons orbiting Jupiter, Europa is a 
+  winter lover’s dream. With an icy surface, it’s perfect for a bit of 
+  ice skating, curling, hockey, or simple relaxation in your snug 
+  wintery cabin.
+  </p>
+
+    <div class="flex destination_meta uppercase letter-spacing-2">
+      <div >
+        <p class="text-accent font_size_14 ff-barlow-cond font_weight_200">Avg. distance</p>
+        <p class=" letter-spacing-2 font_size_28 ff-bellefair  text-white">628 mil. km</p>
+      </div>
+      <div >
+        <p class="text-accent font_size_14 letter-spacing-2 ff-barlow-cond font_weight_200">Est. travel time</p>
+        <p class=" letter-spacing-2 font_size_28 ff-bellefair  text-white">3 years</p>
+      </div>
+    </div>
+  </article>
+  <article id="titan_tab" class="text-accent font_size_16 destination_info flow hidden" tabindex="3" role="tabpanel">
+    <h1 class="uppercase ff-barlow-normal font_size_28 text-accent letter-spacing-1">
+      <span class="ff-bellefair font_size_100 text-white d-block uppercase">Titan</span>
+    </h1>
+
+      <p class="font_weight_200 line_height">is a home away from home (just a few hundred degrees colder!). As a 
+  bonus, you get striking views of the Rings of Saturn.
+  </p>
+
+      <div class="flex destination_meta uppercase letter-spacing-2">
+        <div >
+          <p class="text-accent font_size_14 ff-barlow-cond font_weight_200">Avg. distance</p>
+          <p class=" letter-spacing-2 font_size_28 ff-bellefair  text-white">1.6 bil. km</p>
+        </div>
+        <div >
+          <p class="text-accent font_size_14 letter-spacing-2 ff-barlow-cond font_weight_200">Est. travel time</p>
+          <p class=" letter-spacing-2 font_size_28 ff-bellefair  text-white">7 years</p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+</body>
+
+<script src="index.js" defer></script>
+<script src="tabs.js" defer></script>
+</html>
