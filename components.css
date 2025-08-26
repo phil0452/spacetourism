@@ -68,7 +68,7 @@
 
 .primary_navigation {  
  
-  --gap: clamp(1.5rem, 5vw, 9rem);;
+  --gap: clamp(1.5rem, 5vw, 9rem);
   --underline-gap: 2rem;
     list-style: none;
     z-index: 1000;
@@ -156,8 +156,6 @@ backdrop-filter: blur(1.5rem);
   font-weight: 700;
   margin-right: .5em;
 }
-
-
 
 .primary_navigation_mobile a{
     text-decoration: none;
