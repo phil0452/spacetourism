@@ -155,7 +155,9 @@
   }
 
 .moon_button,
-.mars_button {
+.mars_button,
+.europa_button,
+.titan_button {
   cursor:pointer;
 }
 
@@ -165,4 +167,5 @@ p#content {
   width: 80%; 
   margin: auto;
 }
+
 }
