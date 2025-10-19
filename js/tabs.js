@@ -8,7 +8,9 @@ tabs.forEach((tab) => {
 function changeTabPanel(e){
     let targetTab = e.target;
     let targetPanel = targetTab.getAttribute("aria-controls");
+    //the data-image value is the image ID
     let targetImage = targetTab.getAttribute("data-image");
+    //the data-article value is the articleID
     let targetContent = targetTab.getAttribute("data-article");
     
     let tabContainer = targetTab.parentNode;        // get div container for tabs
@@ -49,3 +51,4 @@ function showContent(parent, content){
     parent.querySelector(content).classList.remove("hidden");
     parent.querySelector(content).classList.add('visible');
 }
+
